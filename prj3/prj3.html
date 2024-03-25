@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Project  3</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script type="text/javascript"
+          src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js">
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css">
+    <link href="../../assets/styles/article.css" rel="stylesheet" type="text/css" /> 
+</head>
+
+<body class=umt-article>
+    <nav id="course-nav">
+      <ul>
+      </ul>
+    </nav>
+
+    <div class="umt-content">
+      <div><section data-level="h1"><h1>Project  3</h1><p><strong>Due</strong>: Mar 30, before midnight.
+</p><p><strong>Important Reminder</strong>: As per the course  <a href="../../misc/academic-honesty/academic-honesty-policy.html">Academic Honesty Policy</a>,
+cheating of any kind will minimally result in your letter grade
+for the entire course being reduced by one level.
+</p><p>This document first provides the aims of this project.  It then lists
+the requirements as explicitly as possible.   It then hints at how
+these requirements can be met.  Finally, it describes how it can be
+submitted.
+</p><section data-level="h2"><h2>Aims</h2><p>The aims of this project are as follows:
+</p><ul><li><p>To give you exposure to recursive and functional programming.
+</p></li><li><p>To expose you to Haskell programming.
+</p></li></ul></section><section data-level="h2"><h2>Requirements</h2><p>Use the Glasgow Haskell Compiler ghc to implement all the functions
+specified in  <a href="prj3-sol/Main.hs">Main.hs</a> or in the skeleton files
+referenced by <code>Main.hs</code>.
+</p><p>When a function requirement specifies a restriction on how that
+function should be implemented, your implementation <strong>must</strong>
+meet that restriction.
+</p></section><section data-level="h2"><h2>Provided Files</h2><p>You should use the provided  <a href="prj3-sol">prj3-sol</a> directory as a
+starting point for your project by copying it into your <code>i571/submit</code>
+directory.  It contains the following files:
+</p><dl><dt>  <a href="prj3-sol/Main.hs?lang=hs">Main.hs</a> </dt><dd><p>    A skeleton file which contains specifications for the some of the
+    functions you are required to write.  For each function it
+    contains a dummy implementation with a <code>&quot;TODO&quot;</code> error.  It also
+    contains QuickCheck tests for these functions as well as a
+    <code>main</code> function which runs all of the tests for the entire project.
+</p></dd><dt>  <a href="prj3-sol/EvalIntExpr.hs?lang=hs">EvalIntExpr.hs</a> </dt><dd><p>    This is a separate skeleton file for implementing a single function
+    <code>evalIntExpr</code>.
+</p></dd><dt>  <a href="prj3-sol/EvalIdExpr.hs?lang=hs">EvalIdExpr.hs</a> </dt><dd><p>    This is a separate skeleton file for implementing a single function
+    <code>evalIdExpr</code>.
+</p></dd><dt>  <a href="prj3-sol/EvalMaybeExpr.hs?lang=hs">EvalMaybeExpr.hs</a> </dt><dd><p>    This is a separate skeleton file for implementing a single function
+    <code>evalMaybeExpr</code>.
+</p></dd><dt>  <a href="prj3-sol/PostfixExpr.hs?lang=hs">PostfixExpr.hs</a> </dt><dd><p>    This is a separate skeleton file for implementing a single function
+    <code>postfixExpr</code>.
+</p></dd><dt>  <a href="prj3-sol/TestUtils.hs?lang=hs">TestUtils.hs</a> </dt><dd><p>    A file containing utilities used for testing.  You should not need to
+    modify this file.
+</p></dd><dt>  <a href="prj3-sol/README">README</a> </dt><dd><p>    A template <code>README</code> which you should complete and
+    submit.
+</p></dd></dl></section><section data-level="h2"><h2>Hints</h2><p>To get started:
+</p><ol><li><p>Simply copy the provided <code>prj3-sol</code> directory into your
+    <code>~/i571/submit</code> directory.
+</p></li><li><p>Install <code>QuickCheck</code> using:
+</p><pre class="hljs language-sh">    $ cabal update
+    $ cabal install --lib QuickCheck
+</pre><p>    This may take a few minutes.
+</p></li></ol><p>Keep the following points in mind while working on your project:
+</p><ul><li><p>Review the class  <a href="../../slides/haskell/haskell.html">Haskell
+    slides</a>.  In particular, the
+     <a href="../../slides/haskell/haskell.html#member">member function</a>
+    covered in class will be useful for exercise #3 and the
+     <a href="../../slides/haskell/haskell.html#do">do syntactic sugar</a>
+    will be useful for exercise #7.
+</p></li><li><p>Details of specific syntax for different Haskell constructs
+    are available in this 
+    <a href="https://jutge.org/doc/haskell-cheat-sheet.pdf">Haskell Cheat Sheet</a>.
+</p></li><li><p> <a href="https://jstolarek.github.io/files/stolarek_understanding_basic_haskell_error_messages.pdf">This document</a> may help you understand Haskell error
+    messages.
+</p></li><li><p>If you do not understand the specs for a function, please look
+    at the provided tests for examples of the expected use of the function.
+</p></li><li><p>When writing recursive functions, use the structure of the data to
+    guide your code.  Typically your code will contain one equation
+    for each variant of the data.
+</p></li><li><p>Hints for each function are available in the provided skeleton
+    files.  
+</p></li><li><p>If you want to experiment with functions or expressions, simply
+    type the expression or function into <code>ghci</code>.  For functions,
+    you will need to define the function within a <code>let</code>.  You will
+    either need to type the entire definition within a single line
+    using something like:
+</p><pre class="hljs language-hs">    ghci> let f x = a * x + b where { a = 2; b = 3 }
+</pre><p>    or turn on multiline mode using:
+</p><pre class="hljs language-hs">    ghci> :set +m
+</pre></li><li><p>You should not need to use Haskell library functions other than those
+    mentioned explicitly in this project or covered in class.
+</p></li><li><p>The project can be run from within ghci:
+</p><pre class="hljs language-sh">    # change to project directory
+    $ cd ~/i571/submit/prj3-sol
+</pre><p>    and start ghci:
+</p><pre class="hljs language-hs">    -- start GHC REPL
+    $ ghci
+    GHCi, version ...
+
+    -- initial load of file
+    ghci> :l &quot;Main.hs&quot;
+    [1 of 6] Compiling EvalIdExpr       ( EvalIdExpr.hs, interpreted )
+    ...
+    [6 of 6] Compiling Main             ( Main.hs, interpreted )
+    Ok, six modules loaded.
+    
+    -- Running all the tests via the main function should not
+    -- produce any output as they are currently set up to Skip
+    ghci> main
+    ghci>
+</pre><p>    As you develop, you will iterate steps similar to the following:
+</p><pre class="hljs language-hs">    -- reload all code; repeat each time source files are changed
+    *Main> :r
+    Ok, six modules loaded.
+
+    -- run a specific function for an input chosen by you.
+    ghci> member 2 [1, 2, 3]
+    True
+
+    -- run all the provided tests for member
+    ghci> testMember
+    &quot;******* member&quot;
+    +++ OK, passed 1 test.
+    ...
+
+    -- run all tests after completing project after ensuring that all
+    -- tests in Main.hs are set to Run.
+    ghci> main
+    &quot;******* toSingletonLists&quot;
+    ...
+    &quot;******* test postfixExpr&quot;
+    +++ OK, passed 1 test.
+    ...
+</pre></li><li><p>You can also run all tests from the command-line using <code>runghc Main.hs</code>
+    while in the project directory.  This command will return silently
+    if you run it on the project as distributed since all test suites are
+    set to <code>Skip</code> but you should see the tests results for exercises
+    as you set their test suites to <code>Run</code> (or <code>Only</code>).
+</p></li></ul></section><section data-level="h2"><h2>Submission</h2><p>Before submitting your project, ensure that all test suites are set to
+<code>Run</code>.  Update your README to specify the status of your project and
+document any known issues.
+</p><p>Submit using a procedure similar to that used in your previous project.  Note
+that unpacking your zip file must create a <code>prj3-sol</code> directory containing
+<code>Main.hs</code> which should be set up to run all the tests.
+</p><p>[The project will be set up on gradescope by early next week].
+</p></section></section></div>
+    </div>
+
+    <script type="module" src="../../assets/scripts/slide-controls.mjs"></script>
+    <script type="module" src="../../assets/scripts/nav.mjs"></script> 
+    <script type="module" src="../../assets/scripts/highlight.mjs"></script>
+</body>
+</html>
+
