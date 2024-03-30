@@ -15,10 +15,10 @@ data IntExpr =
 -- expression-tree given by its argument.
 evalIntExpr :: IntExpr -> Int
 evalIntExpr (Leaf n) = n
-evalIntExpr (Add expr1 expr2) = evalIntExpr expr1 + evalIntExpr expr2
-evalIntExpr (Sub expr1 expr2) = evalIntExpr expr1 - evalIntExpr expr2
-evalIntExpr (Mul expr1 expr2) = evalIntExpr expr1 * evalIntExpr expr2
-evalIntExpr (Uminus expr) = - (evalIntExpr expr)
+evalIntExpr (Add val1 val2) = evalIntExpr val1 + evalIntExpr val2
+evalIntExpr (Sub val1 val2) = evalIntExpr val1 - evalIntExpr val2
+evalIntExpr (Mul val1 val2) = evalIntExpr val1 * evalIntExpr val2
+evalIntExpr (Uminus val) = - (evalIntExpr val)
 
 
 testEvalIntExpr = do
